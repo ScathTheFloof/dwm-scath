@@ -8,7 +8,7 @@ i3lock-color \
 dmenu \
 slstatus \
 dwm (of course) \
-an installer script to make it simple and easy to install \
+\
 
 ## note for some people
 if you know the keybindings then you know that the 'modkey' is alt \
