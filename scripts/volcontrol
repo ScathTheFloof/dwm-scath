@@ -1,0 +1,35 @@
+#! /bin/sh
+# variables
+operation=$1
+volume=$(pamixer --get-volume)
+
+# volume up command
+if [ $operation = 'up' ];
+then
+	#this here sets a limit of 100%
+	if [ $volume -lt 100 ];
+	then
+		echo "changing volume up by 5%"
+		pactl set-sink-volume 0 +5%
+	else
+		pactl set-sink-volume 0 100%
+		echo "volume limit reached"
+	fi
+# volume down command
+elif [ $operation = 'down' ];
+then
+	echo "changing volume down by 5%"
+	pactl set-sink-volume 0 -5%
+# muting
+elif [ $operation = 'mute' ];
+then 
+	echo "muting/unmuting"
+	pactl set-sink-mute 0 toggle
+# if no command is specified
+else
+	echo "no operation specified
+		list of commands: up, down, mute"
+fi
+
+# Update the volume block
+pkill -RTMIN+10 dwmblocks
