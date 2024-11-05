@@ -1,0 +1,35 @@
+--- dwmblocks.c	2020-12-22 14:29:39.744943965 +0200
++++ dwmblocks.c	2020-12-22 14:25:05.289247774 +0200
+@@ -52,31 +51,14 @@ static void (*writestatus) () = pstdout;
+ 
+ static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
+ static char statusstr[2][STATUSLENGTH];
+-static char button[] = "\0";
+ static int statusContinue = 1;
+ static int returnStatus = 0;
+ 
+ //opens process *cmd and stores output in *output
+ void getcmd(const Block *block, char *output)
+ {
+-	if (block->signal)
+-	{
+-		output[0] = block->signal;
+-		output++;
+-	}
+ 	strcpy(output, block->icon);
+-	FILE *cmdf;
+-	if (*button)
+-	{
+-		setenv("BUTTON", button, 1);
+-		cmdf = popen(block->command,"r");
+-		*button = '\0';
+-		unsetenv("BUTTON");
+-	}
+-	else
+-	{
+-		cmdf = popen(block->command,"r");
+-	}
++	FILE *cmdf = popen(block->command, "r");
+ 	if (!cmdf)
+ 		return;
+ 	int i = strlen(block->icon);
