@@ -5,6 +5,13 @@ this is my personal config
 this is my new cozy little dwm setup that I have now\
 I swapped out rxvt-unicode for alacritty because yes
 
+## but I liked the older version better
+don\'t worry I\'m not a shitty company that will take the old version that is surperior away from you forever\
+
+the old version is in the 'old-ver' branch if you want. This version here is also stored in the 'cozy' branch because the setup may change again.\
+this is the command to take back the old version
+
+
 ## what's included
 dmenu \
 dwmblocks \
