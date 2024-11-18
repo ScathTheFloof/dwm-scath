@@ -1,6 +1,10 @@
 # dwm-scath
 this is my personal config
 
+# Cozy setup
+this is my new cozy little dwm setup that I have now\
+I swapped out rxvt-unicode for alacritty because yes
+
 ## what's included
 dmenu \
 dwmblocks \
@@ -9,7 +13,7 @@ dwm (of course)
 ## other things that you need for this to work
 feh (optional)\
 i3lock-color\
-rxvt-unicode\
+alacritty\
 pamixer\
 picom (fdev31) [link](https://github.com/fdev31/picom)
 
